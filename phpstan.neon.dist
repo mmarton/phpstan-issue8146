@@ -1,0 +1,18 @@
+includes:
+	- vendor/phpstan/phpstan-doctrine/extension.neon
+	- vendor/phpstan/phpstan-symfony/extension.neon
+	- vendor/phpstan/phpstan-strict-rules/rules.neon
+	- vendor/phpstan/phpstan-deprecation-rules/rules.neon
+
+parameters:
+	level: 6
+	paths:
+		- src
+	tmpDir: var/cache/phpstan
+	scanFiles:
+		- vendor/twig/twig/src/Extension/CoreExtension.php
+	symfony:
+		container_xml_path: var/cache/dev/App_KernelDevDebugContainer.xml
+	checkGenericClassInNonGenericObjectType: false
+	checkMissingIterableValueType: false
+	checkUninitializedProperties: true
